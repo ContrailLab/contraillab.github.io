@@ -1,0 +1,60 @@
+{
+  "partners": [
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "logo": "/logos/nasa.png",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg",
+      "url": "https://www.nasa.gov"
+    },
+    {
+      "id": "birmingham",
+      "name": "University of Birmingham",
+      "logo": "/logos/birmingham.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/6/68/University_of_Birmingham_logo.svg",
+      "url": "https://www.birmingham.ac.uk"
+    },
+    {
+      "id": "oxford",
+      "name": "University of Oxford",
+      "logo": "/logos/oxford.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Oxford-University-Circlet-Logo.svg",
+      "url": "https://www.ox.ac.uk"
+    },
+    {
+      "id": "cambridge",
+      "name": "University of Cambridge",
+      "logo": "/logos/cambridge.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/c/c3/University_of_Cambridge_coat_of_arms_official_version.svg",
+      "url": "https://www.cam.ac.uk"
+    },
+    {
+      "id": "metoffice",
+      "name": "UK Met Office",
+      "logo": "/logos/metoffice.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Met_Office_logo.svg",
+      "url": "https://www.metoffice.gov.uk"
+    },
+    {
+      "id": "exeter",
+      "name": "University of Exeter",
+      "logo": "/logos/exeter.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/e/e3/University_of_Exeter_logo.svg",
+      "url": "https://www.exeter.ac.uk"
+    },
+    {
+      "id": "yunnan",
+      "name": "Yunnan University",
+      "logo": "",
+      "logoFallback": "",
+      "url": "https://www.ynu.edu.cn"
+    },
+    {
+      "id": "ukri",
+      "name": "UKRI / NERC",
+      "logo": "/logos/ukri.svg",
+      "logoFallback": "https://upload.wikimedia.org/wikipedia/commons/0/07/UK_Research_and_Innovation_logo.svg",
+      "url": "https://www.ukri.org"
+    }
+  ]
+}

@@ -18,6 +18,7 @@ const navItems: { label: string; page: PageRoute }[] = [
 ];
 
 const logoWallPartners = [
+  { name: 'NASA', url: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg' },
   { name: 'University of Birmingham', url: 'https://upload.wikimedia.org/wikipedia/commons/6/68/University_of_Birmingham_logo.svg' },
   { name: 'University of Oxford', url: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Oxford-University-Circlet-Logo.svg' },
   { name: 'University of Cambridge', url: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/University_of_Cambridge_coat_of_arms_official_version.svg' },
@@ -120,45 +121,47 @@ export default function AppLayout({ children, currentPage, onNavigate }: AppLayo
         {children}
       </main>
 
-      {/* Logo Wall */}
-      <section className="bg-night-slate border-t border-white/10 py-16 lg:py-20">
-        <div className="px-6 lg:px-12 max-w-7xl mx-auto">
-          <p className="text-center text-text-secondary text-xs uppercase tracking-[0.15em] font-medium mb-10">
-            Joint Initiative & Financial Support
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-            {logoWallPartners.map((partner) => (
-              <div
-                key={partner.name}
-                className="group flex items-center justify-center h-12 lg:h-14 px-4 transition-all duration-300"
-                title={partner.name}
-              >
-                {partner.url ? (
-                  <img
-                    src={partner.url}
-                    alt={partner.name}
-                    className="h-full w-auto max-w-[140px] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                ) : null}
-                <span
-                  className={`font-serif text-sm lg:text-base text-white/70 group-hover:text-white group-hover:scale-105 transition-all duration-300 ${
-                    partner.url ? 'hidden' : 'flex'
-                  }`}
+      {/* Logo Wall — skip on home page since Home has its own */}
+      {currentPage !== 'home' && (
+        <section className="bg-night-slate border-t border-white/10 py-16 lg:py-20">
+          <div className="px-6 lg:px-12 max-w-7xl mx-auto">
+            <p className="text-center text-text-secondary text-xs uppercase tracking-[0.15em] font-medium mb-10">
+              Joint Initiative & Financial Support
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+              {logoWallPartners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="group flex items-center justify-center h-12 lg:h-14 px-4 transition-all duration-300"
+                  title={partner.name}
                 >
-                  {partner.name}
-                </span>
-              </div>
-            ))}
+                  {partner.url ? (
+                    <img
+                      src={partner.url}
+                      alt={partner.name}
+                      className="h-full w-auto max-w-[140px] object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                  ) : null}
+                  <span
+                    className={`font-serif text-sm lg:text-base text-white/70 group-hover:text-white group-hover:scale-105 transition-all duration-300 ${
+                      partner.url ? 'hidden' : 'flex'
+                    }`}
+                  >
+                    {partner.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Footer */}
       <footer className="bg-deep-space border-t border-white/10 py-8">
