@@ -72,14 +72,14 @@ const publications: Publication[] = [
   },
   {
     id: 'pub-4',
-    title: 'ContrailLab: An Open Platform for Global Aviation Contrail Detection and Climate Modeling',
+    title: 'ContrailVision: An Open Platform for Global Aviation Contrail Detection and Climate Modeling',
     authors: ['R. Williams', 'Z. Li', 'A. B. Smith', 'K. Okafor', 'P. Dubois'],
     journal: 'Environmental Data Science',
     year: 2026,
     volume: '5',
     pages: 'e28',
     doi: '10.1017/eds.2026.28',
-    abstract: 'ContrailLab provides the first open-source platform integrating contrail detection datasets, pre-trained models, and real-time monitoring capabilities. The platform processes imagery from 14 geostationary and polar-orbiting satellites, serving both research and operational aviation communities.',
+    abstract: 'ContrailVision provides the first open-source platform integrating contrail detection datasets, pre-trained models, and real-time monitoring capabilities. The platform processes imagery from 14 geostationary and polar-orbiting satellites, serving both research and operational aviation communities.',
     pdfUrl: '#',
     codeUrl: 'https://github.com/contraillab/platform',
     citations: 18,
@@ -324,11 +324,11 @@ export default function Publications() {
               <h3 className="font-display font-medium text-white">How to Cite</h3>
             </div>
             <p className="text-text-secondary text-sm mb-4">
-              If you use ContrailLab data or models in your research, please cite the platform paper:
+              If you use ContrailVision data or models in your research, please cite the platform paper:
             </p>
             <div className="p-4 rounded-lg bg-night-slate border border-white/10">
               <p className="font-mono text-xs text-white/70 leading-relaxed">
-                Williams, R., Li, Z., Smith, A.B., et al. (2026). ContrailLab: An Open Platform for Global 
+                Williams, R., Li, Z., Smith, A.B., et al. (2026). ContrailVision: An Open Platform for Global 
                 Aviation Contrail Detection and Climate Modeling. <em>Environmental Data Science</em>, 5, e28. 
                 https://doi.org/10.1017/eds.2026.28
               </p>

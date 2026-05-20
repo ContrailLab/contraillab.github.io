@@ -17,6 +17,16 @@ const navItems: { label: string; page: PageRoute }[] = [
   { label: 'Publications', page: 'publications' },
 ];
 
+const monitorDemoNavItems: { label: string; page: PageRoute }[] = [
+  { label: 'Platform', page: 'home' },
+  { label: 'Data', page: 'datasets' },
+  { label: 'Exhibition', page: 'exhibition' },
+  { label: 'Models', page: 'models' },
+  { label: 'Monitor', page: 'monitor' },
+  { label: 'Publications', page: 'publications' },
+  { label: 'Demo', page: 'monitor-demo' },
+];
+
 const logoWallPartners = [
   { name: 'NASA', url: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg' },
   { name: 'University of Birmingham', url: 'https://upload.wikimedia.org/wikipedia/commons/6/68/University_of_Birmingham_logo.svg' },
@@ -61,13 +71,13 @@ export default function AppLayout({ children, currentPage, onNavigate }: AppLayo
           >
             <Plane className="w-5 h-5 text-satellite-blue group-hover:rotate-12 transition-transform duration-300" />
             <span className="font-display font-semibold text-lg tracking-tight text-white">
-              ContrailLab
+              ContrailVision
             </span>
           </button>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
+            {(currentPage === 'monitor-demo' ? monitorDemoNavItems : navItems).map((item) => (
               <button
                 key={item.page}
                 onClick={() => onNavigate(item.page)}
@@ -95,7 +105,7 @@ export default function AppLayout({ children, currentPage, onNavigate }: AppLayo
         {mobileMenuOpen && (
           <div className="lg:hidden bg-deep-space/98 backdrop-blur-lg border-t border-white/10">
             <div className="flex flex-col p-4 gap-1">
-              {navItems.map((item) => (
+              {(currentPage === 'monitor-demo' ? monitorDemoNavItems : navItems).map((item) => (
                 <button
                   key={item.page}
                   onClick={() => {
@@ -169,7 +179,7 @@ export default function AppLayout({ children, currentPage, onNavigate }: AppLayo
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <Plane className="w-4 h-4 text-satellite-blue" />
-              <span className="font-display font-medium text-sm text-white">ContrailLab</span>
+              <span className="font-display font-medium text-sm text-white">ContrailVision</span>
             </div>
             <p className="text-text-secondary text-xs text-center lg:text-right">
               Global contrail detection and climate impact open platform. Data for research use.

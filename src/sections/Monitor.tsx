@@ -6,6 +6,7 @@ import {
   Plane, MapPin, Clock, Signal, Server, Wind,
   Thermometer, Eye, BarChart3, ArrowUpRight, Satellite
 } from 'lucide-react';
+import type { PageRoute } from '../App';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +43,11 @@ const recentDetections = [
   { id: 'DET-28467', flight: 'CX845', region: 'North Pacific', confidence: 0.96, time: '08:28 UTC', length: '15.6 km' },
 ];
 
-export default function Monitor() {
+interface MonitorProps {
+  onNavigate: (page: PageRoute) => void;
+}
+
+export default function Monitor({ onNavigate }: MonitorProps) {
   const [currentTime, setCurrentTime] = useState(new Date());
   const pageRef = useRef<HTMLDivElement>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
@@ -87,7 +92,10 @@ export default function Monitor() {
           <p className="text-text-secondary text-sm md:text-base max-w-lg mb-8">
             Real-time contrail detection and climate impact monitoring across global aviation corridors.
           </p>
-          <button className="animate-pulse-glow flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-satellite-blue to-cyan-500 hover:from-satellite-blue/90 hover:to-cyan-500/90 text-white font-display font-medium text-lg rounded-[10px] transition-all duration-300 hover:scale-105">
+          <button
+            onClick={() => onNavigate('monitor-demo')}
+            className="animate-pulse-glow flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-satellite-blue to-cyan-500 hover:from-satellite-blue/90 hover:to-cyan-500/90 text-white font-display font-medium text-lg rounded-[10px] transition-all duration-300 hover:scale-105"
+          >
             <RocketIcon className="w-5 h-5" />
             Launch Web GIS Live Platform
           </button>
